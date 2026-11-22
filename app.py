@@ -66,7 +66,7 @@ with tab_hoy:
             f"| Campo | Hoy |\n|---|---|\n"
             f"| Día sexagenario | {t['dia_sexagenario']} |\n"
             f"| Elemento del día de la semana | {t['elemento_dia_semana']} |\n"
-            f"| Relación | {t['relacion_elementos']} |\n"
+            f"| Relación (jung tsi) | {t['relacion_elementos']} |\n"
             f"| Mewa / Parkha del día | {t['mewa_dia']} · {t['parkha_dia']} |")
         if t["dia_doble"]:
             st.info("Día doble (el día lunar se repite).")
@@ -74,6 +74,8 @@ with tab_hoy:
             st.info("El día lunar anterior se omitió.")
         for f in t["festivales"]:
             st.success(f"Festividad: {f}")
+        if t.get("app_shen_url"):
+            st.markdown(f"Combinación Shen del día (planeta + constelación): [ver en la app Shen]({t['app_shen_url']})")
         if not t["dias_personales_configurados"]:
             st.caption("Días la / sog / shé sin configurar (data/bon_rules.yaml).")
         for p in t["dias_personales"]:
@@ -93,7 +95,7 @@ with tab_hoy:
     else:
         st.markdown("Día sin práctica especial en el calendario. Práctica regular.")
     if not t["validado"]:
-        st.caption("⚠️ Reglas Bön sin validar contra la app Bon Calendar. Tu lama tiene la última palabra.")
+        st.caption("⚠️ Prácticas por día lunar sin validar del todo (15 y 30 confirmados en la app Shen). Tu lama tiene la última palabra.")
 
     st.markdown("#### Checklist")
     for x in c["checklist"]:
@@ -121,7 +123,6 @@ with tab_mes:
             "práctica Bön": (tt["practica"]["titulo"] + (" ★" if tt["practica"]["mayor"] else "")) if tt["practica"] else "",
             "festividad": ", ".join(tt["festivales"]),
             "la/sog/shé": " · ".join(x.split(":")[0] for x in tt["dias_personales"]),
-            "elementos": tt["relacion_elementos"].split(" ")[0],
             "Saju": ss["dia"]["pilar"],
             "Ten God": f"{ss['ten_god_dia'][0]} {ss['ten_god_dia'][1]}",
         })

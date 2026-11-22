@@ -43,3 +43,21 @@ def test_timeline_166_transitos():
 def test_occidental_dia():
     w = western.day_info(date(2026, 11, 22))
     assert w["luna"]["signo"]
+
+
+def test_calendario_coincide_con_app_shen():
+    # Capturas de la app Shen (FPYB): 21-nov-2026 = día lunar 12, mes Horda 10, sábado
+    t = tibetan.day_info(date(2026, 11, 21))
+    assert (t["mes"], t["dia_lunar"]) == (10, 12)
+    assert "Gran debate de la Escuela Dialéctica" in t["festivales"]
+    # 19-ene-2026 = día 1 del mes 12: Losar de Zhang Zhung
+    t = tibetan.day_info(date(2026, 1, 19))
+    assert (t["mes"], t["dia_lunar"]) == (12, 1)
+    assert any("Zhang Zhung" in f for f in t["festivales"])
+
+
+def test_dias_la_sog_she_pajaro():
+    # Viernes la, jueves sog, martes shé (Key FPYB, fila Garuda/Monkey)
+    assert any("la" in x for x in tibetan.day_info(date(2026, 11, 27))["dias_personales"])
+    assert any("sog" in x for x in tibetan.day_info(date(2026, 11, 26))["dias_personales"])
+    assert any("shé" in x for x in tibetan.day_info(date(2026, 11, 24))["dias_personales"])

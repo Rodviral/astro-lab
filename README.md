@@ -50,15 +50,14 @@ python -m pytest -q
 | Occidental | Semana 2026-11-23: arco solar ≈ 44.02, Saturno ☍ Júpiter orbe ≈ 0.77 |
 | Timeline | 166 tránsitos cargados |
 
-**Pendiente manual:** comparar 30 días de "día lunar" y "práctica" con la app **Bon Calendar** (Gyalshen Institute) y luego poner `validado_dias_lunares: true` en `data/bon_rules.yaml`.
+**Fuente de verdad Bön:** la app [Shen Calendar](https://yungdrungbon.co.uk/shen-calendar/) de FPYB (cálculos de Triten Norbutse). Ya validado: día lunar y mes en 2 fechas, festividades anuales y días la/sog/shé del signo Pájaro. Pendiente: confirmar el significado de las prácticas por día lunar (salvo 15 y 30) y luego poner `validado_dias_lunares: true`.
 
 ## Qué falta llenar (en `data/bon_rules.yaml`)
 
 | Campo | Fuente sugerida |
 |---|---|
-| `dias_personales` (la / sog / shé) para el signo Pájaro | Shen Calendar Key o app Bon Calendar |
 | `perfil_natal` (la, sog, lü, wangthang, lungta) | Tu maestro o un texto de astrología elemental |
-| Más festividades | App Bon Calendar |
+| Combinación Shen del día (planeta + constelación) y días lu | App Shen; requiere calcular la constelación lunar |
 
 ## Troubleshooting
 

@@ -76,12 +76,15 @@ def day_info(d: date) -> dict:
     wd_el = rules["elemento_dia_semana"][wd]
     day_el = ELEMENTS[civ["element"]]
     practice = rules["dias_lunares"].get(t.tithi)
-    festivals = [f["nombre"] for f in rules.get("festivales", []) if f["mes"] == t.month and f["dia"] == t.tithi]
+    festivals = [
+        f["nombre"] for f in rules.get("festivales", [])
+        if f["mes"] == t.month and ("dia" not in f or f["dia"] <= t.tithi <= f.get("dia_fin", f["dia"]))
+    ]
 
     personal = []
     for key, label in (("la", "Día la (alma): favorable para lo espiritual"),
                        ("sog", "Día sog (fuerza vital): favorable para acciones virtuosas"),
-                       ("she", "Día shé (obstáculos): evitar inicios importantes")):
+                       ("she", "Día shé (obstáculos): evitar inicios importantes; los obstáculos se someten con ritual")):
         if rules["dias_personales"].get(key) == wd:
             personal.append(label)
 
@@ -98,7 +101,8 @@ def day_info(d: date) -> dict:
         "elemento_dia_semana": wd_el,
         "dia_sexagenario": f"{ANIMALS[civ['animal']]} de {day_el}",
         "elemento_dia": day_el,
-        "relacion_elementos": element_relation(wd_el, day_el),
+        "relacion_elementos": element_relation(wd_el, day_el),  # jung tsi; no es la combinación Shen
+        "app_shen_url": rules.get("app_shen_url"),
         "mewa_dia": f"{mewa} {MEWA_COLORS[mewa - 1]}" if mewa else None,
         "parkha_dia": TRIGRAMS[civ["trigram"]] if "trigram" in civ else None,
         "practica": practice,

@@ -22,10 +22,6 @@ def compose(d: date) -> dict:
     checklist.append(f"Usar la energía {s['ten_god_dia'][2].split(':')[0].lower()} del día ({s['ten_god_dia'][0]} {s['ten_god_dia'][1]})")
     if s["aporta_ausentes"]:
         checklist.append(f"Aprovechar que hoy entra {', '.join(s['aporta_ausentes'])}, ausente en tu carta")
-    if "enemigos" in t["relacion_elementos"]:
-        checklist.append("Evitar forzar inicios: los elementos del día chocan")
-    elif "madre" in t["relacion_elementos"] or "amigo" in t["relacion_elementos"]:
-        checklist.append("Buen día para empezar algo: los elementos del día se apoyan")
     keywords = [w["luna"]["elemento"], s["dia"]["elemento_tallo"], b["dominante"], s["ten_god_dia"][0]]
     return {"western": w, "saju": s, "tibetan": t, "bridge": b, "checklist": checklist,
             "palabras_clave": list(dict.fromkeys(keywords))}
@@ -37,7 +33,7 @@ def to_markdown(d: date, c: dict) -> str:
     lines += ["| Sistema | Hoy |", "|---|---|",
               f"| Occidental | Luna en {w['luna']['signo']} {w['luna']['grado']}° · {w['luna']['fase']} |",
               f"| Saju | Día {s['dia']['pilar']} · {s['ten_god_dia'][0]} {s['ten_god_dia'][1]} ({s['ten_god_dia'][2]}) |",
-              f"| Tibetano | Día lunar {t['dia_lunar']}, mes {t['mes']} · {t['dia_sexagenario']} · {t['relacion_elementos']} |",
+              f"| Tibetano | Día lunar {t['dia_lunar']}, mes {t['mes']} · {t['dia_sexagenario']} |",
               f"| Puente | {b['lectura']} |", ""]
     if w["lentos"]:
         lines += ["**Tránsitos lentos**", "", "| Aspecto | Orbe |", "|---|---|"]
@@ -49,5 +45,5 @@ def to_markdown(d: date, c: dict) -> str:
     lines += ["**Checklist**", ""] + [f"- [ ] {x}" for x in c["checklist"]] + [""]
     lines += ["**Palabras clave:** " + " · ".join(c["palabras_clave"]), ""]
     if not t["validado"]:
-        lines += ["> Reglas Bön sin validar contra la app Bon Calendar.", ""]
+        lines += ["> Prácticas por día lunar sin validar del todo; festividades y días la/sog/shé según la app Shen (FPYB).", ""]
     return "\n".join(lines)
