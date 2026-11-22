@@ -1,0 +1,23 @@
+# Datos natales y rutas. Edita aquí, no en el código.
+nombre: Rodrigo
+nacimiento:
+  fecha: 1981-08-17
+  hora: "12:43"            # hora local CST (UTC-6, sin horario de verano en 1981)
+  ciudad: Ciudad de México
+  lat: 19.4326
+  lng: -99.1332
+  tz: America/Mexico_City
+  sexo: M                  # se usa para el Daewoon (dirección de las décadas)
+
+# Saju de referencia (HANDOFF sección 3). La app recalcula y avisa si no coincide.
+saju_esperado:
+  anio: 辛酉
+  mes: 丙申
+  dia: 丁卯
+  hora: 丙午
+
+# Motor del calendario tibetano en caltib: phugpa | tsurphu | mongol | bhutan
+motor_tibetano: phugpa
+
+# Carpeta donde la app escribe la nota diaria (fuera del knowledge graph laboral)
+vault_astro: /Users/rodrigonavarro/Documents/Claude/vault/Personal/Astrology/Diario

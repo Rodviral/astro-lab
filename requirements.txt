@@ -1,0 +1,9 @@
+kerykeion==4.26.3
+pyswisseph
+lunar-python>=1.4.9
+caltib>=0.3.9
+streamlit>=1.40
+pyyaml
+pandas
+altair
+pytest

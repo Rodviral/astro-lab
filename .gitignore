@@ -1,0 +1,6 @@
+__pycache__/
+.venv/
+.pytest_cache/
+diario/*
+!diario/.gitkeep
+.DS_Store

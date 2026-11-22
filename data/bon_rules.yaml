@@ -1,0 +1,101 @@
+# Reglas Yungdrung Bön en español, para uso personal.
+# Todo lo marcado "validado: false" debe revisarse contra la app Bon Calendar
+# (Gyalshen Institute) o con tu lama antes de confiar en ello.
+#
+# Fuentes (parafraseadas, no copiadas):
+# - Raven Cypress Wood, "Yungdrung Bön Auspicious Days for Spiritual Practice" (2019)
+# - Foundation for the Preservation of Yungdrung Bön, "Shen Calendar Key"
+
+# Días de práctica por día lunar (tithi). "mayor" = uno de los 4 días auspiciosos del mes.
+dias_lunares:
+  1:
+    titulo: Generosidad
+    ensenanza: Tönpa Shenrab enseñó a los dioses del espacio en el reino sin forma
+    purificar: Avidez y apego
+    sugerencia: Practicar generosidad; ofrendas
+    mayor: false
+  8:
+    titulo: Día de mantras esenciales
+    ensenanza: Enseñanza a los dioses de la clara luz
+    purificar: Votos rotos
+    sugerencia: Recitar uno de los tres mantras esenciales
+    mayor: true
+  14:
+    titulo: Purificación del deseo
+    ensenanza: Enseñanza a los dioses Gaden del reino de la forma
+    purificar: Conducta sexual dañina y deseo
+    sugerencia: Confesión con los cuatro poderes
+    mayor: false
+  15:
+    titulo: Luna llena
+    ensenanza: Enseñanza a los dioses del reino del deseo en la cima del Meru
+    purificar: Daño grave a otros
+    sugerencia: Día favorable para propiciar a Drenpa Namkha
+    mayor: true
+  16:
+    titulo: Armonía con maestros y padres
+    ensenanza: Enseñanza a los cuatro grandes dioses y reyes
+    purificar: Desacuerdos con padres, lama o compañeros de práctica
+    sugerencia: Reparar vínculos; ofrecer disculpas
+    mayor: false
+  19:
+    titulo: Purificación de daño accidental
+    ensenanza: Enseñanza a los dioses Tsang Ri del reino de la forma
+    purificar: Daño accidental
+    sugerencia: Confesión y dedicación de mérito
+    mayor: false
+  22:
+    titulo: Día auspicioso mayor
+    ensenanza: Enseñanza a los semidioses en las laderas del Meru
+    purificar: Daño grave o mentir al lama
+    sugerencia: Práctica extendida; la virtud se multiplica
+    mayor: true
+  29:
+    titulo: Día de los lu (nagas)
+    ensenanza: Enseñanza a los lu del reino del deseo
+    purificar: Robo
+    sugerencia: Ofrendas a los lu; cuidado del agua y la tierra
+    mayor: false
+  30:
+    titulo: Luna nueva
+    ensenanza: Enseñanza a los seres del reino sin forma
+    purificar: Visiones erróneas
+    sugerencia: Ganapuja de Nyamme o de Lama Gönpo; la virtud se duplica
+    mayor: true
+validado_dias_lunares: false
+
+# Festivales con fecha lunar fija (mes, día). Completar con la app Bon Calendar.
+festivales:
+  - {mes: 12, dia: 1, nombre: "Losar de Zhang Zhung"}
+  - {mes: 12, dia: 15, nombre: "Nacimiento de Tönpa Shenrab (14-15 del 12.º mes)"}
+validado_festivales: false
+
+# Elemento de cada día de la semana en astrología elemental tibetana.
+# 0 = domingo ... 6 = sábado (convención de caltib).
+elemento_dia_semana:
+  0: Fuego    # Sol
+  1: Agua     # Luna
+  2: Fuego    # Marte
+  3: Agua     # Mercurio
+  4: Madera   # Júpiter
+  5: Metal    # Venus
+  6: Tierra   # Saturno
+
+# Días la / sog / shé según TU animal del año (Pájaro, Metal hembra, 1981).
+# PENDIENTE: llenar con la tabla de la Shen Calendar Key o la app Bon Calendar.
+# Usa 0 = domingo ... 6 = sábado. Deja null lo que no sepas.
+dias_personales:
+  la: null      # día del alma: favorable para actividades espirituales
+  sog: null     # día de la fuerza vital: favorable para acciones virtuosas
+  she: null     # día de obstáculos: evitar inicios importantes
+validado_dias_personales: false
+
+# Perfil elemental del año natal (la, sog, lü, wangthang, lungta).
+# PENDIENTE: llenar con un texto de astrología elemental (jung tsi) o tu maestro.
+perfil_natal:
+  la: null
+  sog: null
+  lu: null
+  wangthang: null
+  lungta: null
+validado_perfil_natal: false
