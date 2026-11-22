@@ -1,0 +1,132 @@
+# Reglas Yungdrung Bön en español, para uso personal.
+# Todo lo marcado "validado: false" debe revisarse contra la app Shen Calendar
+# (FPYB) o con tu lama antes de confiar en ello.
+#
+# Fuente de verdad: app Shen Calendar de la Foundation for the Preservation of
+# Yungdrung Bön (FPYB), cálculos de Drubdra Khenpo Tsultrim Tenzin (Triten Norbutse).
+# Uso estrictamente personal: FPYB no permite redistribuir su contenido.
+#
+# Otras fuentes (parafraseadas, no copiadas):
+# - Raven Cypress Wood, "Yungdrung Bön Auspicious Days for Spiritual Practice" (2019)
+# - Foundation for the Preservation of Yungdrung Bön, "Shen Calendar Key"
+
+# Días de práctica por día lunar (tithi). "mayor" = uno de los 4 días auspiciosos del mes.
+dias_lunares:
+  1:
+    titulo: Generosidad
+    ensenanza: Tönpa Shenrab enseñó a los dioses del espacio en el reino sin forma
+    purificar: Avidez y apego
+    sugerencia: Practicar generosidad; ofrendas
+    mayor: false
+  8:
+    titulo: Día de mantras esenciales
+    ensenanza: Enseñanza a los dioses de la clara luz
+    purificar: Votos rotos
+    sugerencia: Recitar uno de los tres mantras esenciales
+    mayor: true
+  14:
+    titulo: Purificación del deseo
+    ensenanza: Enseñanza a los dioses Gaden del reino de la forma
+    purificar: Conducta sexual dañina y deseo
+    sugerencia: Confesión con los cuatro poderes
+    mayor: false
+  15:
+    titulo: Luna llena
+    ensenanza: Enseñanza a los dioses del reino del deseo en la cima del Meru
+    purificar: Daño grave a otros
+    sugerencia: Ganapuja de Drenpa Namkha (confirmado en Key FPYB)
+    mayor: true
+  16:
+    titulo: Armonía con maestros y padres
+    ensenanza: Enseñanza a los cuatro grandes dioses y reyes
+    purificar: Desacuerdos con padres, lama o compañeros de práctica
+    sugerencia: Reparar vínculos; ofrecer disculpas
+    mayor: false
+  19:
+    titulo: Purificación de daño accidental
+    ensenanza: Enseñanza a los dioses Tsang Ri del reino de la forma
+    purificar: Daño accidental
+    sugerencia: Confesión y dedicación de mérito
+    mayor: false
+  22:
+    titulo: Día auspicioso mayor
+    ensenanza: Enseñanza a los semidioses en las laderas del Meru
+    purificar: Daño grave o mentir al lama
+    sugerencia: Práctica extendida; la virtud se multiplica
+    mayor: true
+  29:
+    titulo: Día de los lu (nagas)
+    ensenanza: Enseñanza a los lu del reino del deseo
+    purificar: Robo
+    sugerencia: Ofrendas a los lu; cuidado del agua y la tierra
+    mayor: false
+  30:
+    titulo: Luna nueva
+    ensenanza: Enseñanza a los seres del reino sin forma
+    purificar: Visiones erróneas
+    sugerencia: Ganapujas de Nyamme Ladrub y Lama Gönpo (confirmado en Key FPYB); la virtud se duplica
+    mayor: true
+validado_dias_lunares: false
+
+# Festivales anuales de Triten Norbutse (Key FPYB). Mes = sistema Horda, que coincide
+# con la numeración de meses Phugpa de caltib (validado: 19-ene-2026 = mes 12 día 1;
+# 21-nov-2026 = mes 10 día 12). dia_fin opcional; sin "dia" = todo el mes.
+festivales:
+  - {mes: 12, dia: 1, nombre: "Losar de Zhang Zhung (reunión de la comunidad Bönpo)"}
+  - {mes: 12, dia: 3, nombre: "Aniversario del parinirvana de Shense Norbu Wanggyal Rinpoche"}
+  - {mes: 12, dia: 14, dia_fin: 15, nombre: "Gran celebración del nacimiento de Tönpa Shenrab Miwo"}
+  - {mes: 12, dia: 25, nombre: "Danza Cham y exámenes de canto"}
+  - {mes: 12, dia: 26, nombre: "Preparativos de Gutor"}
+  - {mes: 12, dia: 27, dia_fin: 29, nombre: "Gran festival de Shen Gutor"}
+  - {mes: 1, dia: 1, nombre: "Losar Horda"}
+  - {mes: 1, dia: 4, dia_fin: 5, nombre: "Gran festival de Nyamme Sherab Gyaltsen"}
+  - {mes: 1, dia: 8, nombre: "Danza Cham Shen"}
+  - {mes: 1, dia: 15, nombre: "Gran festival del Mes de los Milagros"}
+  - {mes: 1, dia: 22, nombre: "Preparación de la práctica comunal de Mawai Sengge y Drenpa Namkha"}
+  - {mes: 1, dia: 23, dia_fin: 30, nombre: "Práctica comunal de Mawai Sengge y Drenpa Namkha"}
+  - {mes: 3, nombre: "Mes de 100,000 ganapujas a Sipai Gyalmo"}
+  - {mes: 4, dia: 11, dia_fin: 12, nombre: "Preparación de Nyelam Debzhi (ritual a los señores de la tierra)"}
+  - {mes: 4, dia: 13, dia_fin: 16, nombre: "Recitación de Nyelam Debzhi"}
+  - {mes: 4, dia: 16, nombre: "Aniversario del parinirvana de Yongdzin Lopön Tenzin Namdak Rinpoche"}
+  - {mes: 7, dia: 24, nombre: "Aniversario del parinirvana del 33.º Menri Tridzin Lungtog Tenpai Nyima Rinpoche"}
+  - {mes: 7, dia: 30, nombre: "Preparación de la confesión y renovación de votos"}
+  - {mes: 8, dia: 1, dia_fin: 7, nombre: "Gran ritual de confesión y renovación de votos"}
+  - {mes: 9, nombre: "Mes de 100,000 ganapujas a Drenpa Namkha"}
+  - {mes: 9, dia: 30, nombre: "Aniversario del parinirvana de Tönpa Shenrab Miwo"}
+  - {mes: 10, dia: 1, dia_fin: 21, nombre: "Gran debate de la Escuela Dialéctica"}
+validado_festivales: true
+
+# Elemento de cada día de la semana en astrología elemental (jung tsi, 5 elementos).
+# OJO: la "combinación menor" de la app Shen usa astrología de estrellas (skar tsi,
+# 4 elementos: tierra, agua, fuego, viento) con la constelación del día. No es esto.
+# 0 = domingo ... 6 = sábado (convención de caltib).
+elemento_dia_semana:
+  0: Fuego    # Sol
+  1: Agua     # Luna
+  2: Fuego    # Marte
+  3: Agua     # Mercurio
+  4: Madera   # Júpiter
+  5: Metal    # Venus
+  6: Tierra   # Saturno
+
+# Días la / sog / shé según TU signo del año: Pájaro (en la tabla Bön, fila "Garuda/Monkey").
+# Fuente: Shen Calendar Key (FPYB), tabla "Positive & Negative Days of the Week".
+# 0 = domingo ... 6 = sábado.
+dias_personales:
+  la: 5         # viernes: día del alma, favorable para actividades espirituales
+  sog: 4        # jueves: día de la fuerza vital, éxito en acciones virtuosas
+  she: 2        # martes: día de obstáculos; se pueden someter con ritual
+
+# Enlace para ver la combinación del día (planeta + constelación), que la app aún no calcula
+app_shen_url: https://yungdrungbon.co.uk/shen-calendar/
+validado_dias_personales: true
+
+# Perfil elemental del año natal (la, sog, lü, wangthang, lungta).
+# PENDIENTE: llenar con un texto de astrología elemental (jung tsi) o tu maestro.
+perfil_natal:
+  la: null
+  sog: null
+  lu: null
+  wangthang: null
+  lungta: null
+validado_perfil_natal: false
