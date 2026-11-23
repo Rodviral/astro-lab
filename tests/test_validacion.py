@@ -61,3 +61,23 @@ def test_dias_la_sog_she_pajaro():
     assert any("la" in x for x in tibetan.day_info(date(2026, 11, 27))["dias_personales"])
     assert any("sog" in x for x in tibetan.day_info(date(2026, 11, 26))["dias_personales"])
     assert any("shé" in x for x in tibetan.day_info(date(2026, 11, 24))["dias_personales"])
+
+
+def test_paquete_semanal():
+    from astro import week
+    w = week.build(date(2026, 11, 25))  # miércoles: se ajusta al lunes 23
+    assert w["semana"]["inicio"] == "2026-11-23"
+    assert len(w["dias"]) == 7
+    ev = {e["evento"]: e["hora_local"] for e in w["eventos"]}
+    assert ev["Luna llena"].startswith("2026-11-24 08:5")  # 14:53 UT
+    assert "Marte entra a Virgo" in ev
+    martes = w["dias"][1]
+    assert martes["tibetano"]["dia_lunar"] == 15 and martes["tibetano"]["practica_validada"]
+    assert any("shé" in p for p in martes["tibetano"]["dias_personales"])
+    assert w["saju_contexto"]["daewoon"].startswith("辛卯")
+
+
+def test_solsticio_diciembre():
+    from astro import week
+    ev = {e["evento"]: e["hora_local"] for e in week.events(date(2026, 12, 21))}
+    assert ev["Sol entra a Capricornio"].startswith("2026-12-21 14:5")  # 20:50 UT
