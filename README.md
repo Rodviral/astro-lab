@@ -36,6 +36,14 @@ streamlit run app.py
 
 Se abre en el navegador (`http://localhost:8501`). Pestañas: **Hoy**, **Mes**, **Timeline 2026-2030**, **Carta comparada**, **Similitudes**, **Diario y oráculo**. El botón "Guardar nota del día" escribe en la carpeta `vault_astro` de `config/natal.yaml`.
 
+## Reporte semanal (skill `astrology-week-report`)
+
+```bash
+python -m astro.week 2026 11 23     # cualquier fecha; se ajusta al lunes
+```
+
+Devuelve un JSON con todo lo que el skill necesita: tránsitos, progresiones y arco solar (`occidental`), lunaciones, ingresos y estaciones con hora de CDMX (`eventos`), Saju y calendario tibetano/Bön por día (`dias`), próximos días Bön (`proximos_bon`). La combinación Shen del día no se calcula: el JSON remite a la app.
+
 ## Validación
 
 ```bash
@@ -49,6 +57,7 @@ python -m pytest -q
 | Saju vs tibetano | El elemento del día coincide en ambos sistemas (mismo ciclo de 60) |
 | Occidental | Semana 2026-11-23: arco solar ≈ 44.02, Saturno ☍ Júpiter orbe ≈ 0.77 |
 | Timeline | 166 tránsitos cargados |
+| Paquete semanal | Luna llena 24-nov-2026 08:53 CDMX, día lunar 15 + shé; solsticio 21-dic 14:50 |
 
 **Fuente de verdad Bön:** la app [Shen Calendar](https://yungdrungbon.co.uk/shen-calendar/) de FPYB (cálculos de Triten Norbutse). Ya validado: día lunar y mes en 2 fechas, festividades anuales y días la/sog/shé del signo Pájaro. Pendiente: confirmar el significado de las prácticas por día lunar (salvo 15 y 30) y luego poner `validado_dias_lunares: true`.
 
